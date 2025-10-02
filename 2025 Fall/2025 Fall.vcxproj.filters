@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ios _train.cpp">
+    <ClCompile Include="计算偏移量.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
