@@ -14,10 +14,10 @@ struct student {
 int main() {
     int student_num;
 
-	FILE* fp;
-	fp = fopen("student.txt", "r");
+    FILE* fp;
+    fp = fopen("student.txt", "r");
     if (fp == NULL) {
-		cout << "Error opening file!" << endl;
+        cout << "Error opening file!" << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -27,20 +27,32 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-	cout << "所有的学生信息如下：" << endl;
+    cout << "所有的学生信息如下：" << endl;
 
-    student* head ,* p,* q = NULL;
-	for (int i = 0; i < student_num; i++) {
-		p = (student*)malloc(sizeof(student));
-		if (p == NULL) {
-			cout << "Memory allocation failed!" << endl;
-			fclose(fp);
-			exit(EXIT_FAILURE);
-		}
+    student* head = NULL, * p = NULL, * q = NULL;
+    for (int i = 0; i < student_num; i++) {
+        p = (student*)malloc(sizeof(student));
+
+        if (p == NULL) {
+            cout << "Memory allocation failed!" << endl;
+            if (head != NULL) {
+                student* current = head;
+                while (current != NULL) {
+                    student* temp = current;
+                    current = current->next;
+                    free(temp);
+                }
+            }
+            fclose(fp);
+            exit(EXIT_FAILURE);
+        }
+
+        p->next = NULL;
 
         if (i == 0) {
             if (fscanf(fp, "%d %s %d", &p->no, &p->name, &p->score) != 3) {
                 cout << "Error reading student information from file!" << endl;
+                free(p);
                 fclose(fp);
                 exit(EXIT_FAILURE);
             }
@@ -50,18 +62,28 @@ int main() {
         else {
             if (fscanf(fp, "%d %s %d", &p->no, p->name, &p->score) != 3) {
                 cout << "Error reading student information from file!" << endl;
+                student* temp = NULL;
+                while (head != NULL) {
+                    temp = head;
+                    head = head->next;
+                    free(temp);
+                }
                 fclose(fp);
                 exit(EXIT_FAILURE);
             }
-			q->next = p;
-			q = p;
+            q->next = p;
+            q = p;
         }
 
-		cout << "学号：" << p->no << " 姓名：" << p->name << " 成绩：" << p->score << endl;
-	}
+        cout << "学号：" << p->no << " 姓名：" << p->name << " 成绩：" << p->score << endl;
+    }
 
+    student* current = head;
+    while (current != NULL) {
+        student* temp = current;
+        current = current->next;
+        free(temp);
+    }
 
     fclose(fp);
-	return 0;
-}
-
+    return 0;
