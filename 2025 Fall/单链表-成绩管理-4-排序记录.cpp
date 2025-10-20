@@ -4,11 +4,11 @@
 using namespace std;
 
 struct student {
-    int no;                // Ñ§ºÅ
-    char name[20];         // ĞÕÃû
-    int score;             // ³É¼¨
-    struct student* next;  // ÏÂÒ»½áµã
-    /*! ²»ÔÊĞíĞŞ¸ÄÉÏÊö½á¹¹ !*/
+    int no;                // å­¦å·
+    char name[20];         // å§“å
+    int score;             // æˆç»©
+    struct student* next;  // ä¸‹ä¸€ç»“ç‚¹
+    /*! ä¸å…è®¸ä¿®æ”¹ä¸Šè¿°ç»“æ„ !*/
 };
 
 void read(FILE* fp, student*& head) {
@@ -66,7 +66,7 @@ void read(FILE* fp, student*& head) {
     }
 }
 
-// ÓÅ»¯µÄÃ°ÅİÅÅĞò
+// ä¼˜åŒ–çš„å†’æ³¡æ’åº
 student* optimizedBubbleSort(student* head) {
     if (!head || !head->next) return head;
 

@@ -4,11 +4,11 @@
 using namespace std;
 
 struct student {
-    int no;                // Ñ§ºÅ
-    char name[20];         // ÐÕÃû
-    int score;             // ³É¼¨
-    struct student* next;  // ÏÂÒ»½áµã
-    /*! ²»ÔÊÐíÐÞ¸ÄÉÏÊö½á¹¹ !*/
+    int no;                // å­¦å·
+    char name[20];         // å§“å
+    int score;             // æˆç»©
+    struct student* next;  // ä¸‹ä¸€ç»“ç‚¹
+    /*! ä¸å…è®¸ä¿®æ”¹ä¸Šè¿°ç»“æž„ !*/
 };
 
 void read(FILE* fp, student*& head) {
@@ -99,7 +99,7 @@ int main() {
 		head = head->next;
 	}
 
-	cout << "Í³¼ÆÐÅÏ¢ÈçÏÂ£ºÓÅ: " << student_u << "ÈË Á¼: " << student_liang << "ÈË ÖÐ: " << student_zhong << "ÈË ¼°¸ñ: " << student_jige << "ÈË ²»¼°¸ñ: " << student_bujige << "ÈË" << endl;
+	cout << "ç»Ÿè®¡ä¿¡æ¯å¦‚ä¸‹ï¼šä¼˜: " << student_u << "äºº è‰¯: " << student_liang << "äºº ä¸­: " << student_zhong << "äºº åŠæ ¼: " << student_jige << "äºº ä¸åŠæ ¼: " << student_bujige << "äºº" << endl;
 
     student* current = head;
     while (current != NULL) {
