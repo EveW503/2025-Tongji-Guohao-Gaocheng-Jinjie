@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="单链表-成绩管理-7-修改记录.cpp" />
+    <ClCompile Include="单链表-成绩管理-11-带表头结点-添加记录.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

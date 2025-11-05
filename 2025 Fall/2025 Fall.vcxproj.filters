@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="单链表-成绩管理-5-查找记录.cpp">
+    <ClCompile Include="单链表-成绩管理-11-带表头结点-添加记录.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
