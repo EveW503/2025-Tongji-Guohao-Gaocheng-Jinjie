@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="继承与派生-4-阳光豌豆.cpp">
+    <ClCompile Include="多态性与虚函数-2-矩形法求定积分的通用函数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
